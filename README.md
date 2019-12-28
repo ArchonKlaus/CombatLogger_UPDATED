@@ -3,7 +3,7 @@ This is CombatLogger updated for 3.0.0 and up. I didn't write this plugin, only 
 CombatLogger
 ===================
 __PocketMine Plugin__
-
+### NEW UPDATE: ADDED SCOREBOARD
 ### About
 
 CombatLogger allows you to punish and control players that try to combat log! You can prevent players from executing,
