@@ -1,6 +1,6 @@
 name: CombatLogger
 description: Simple plugin that allows you to punish combat loggers!
-author: Jack Noordhuis & Updated By CupidonSauce173
+author: Jack Noordhuis & Updated By varion
 main: jacknoordhuis\combatlogger\CombatLogger
 version: 0.0.3
 api: [3.0.0, 4.0.0]
