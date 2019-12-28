@@ -19,6 +19,7 @@ namespace jacknoordhuis\combatlogger;
 
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
+use Scoreboards\Scoreboards;
 
 class TaggedHeartbeatTask extends Task {
 
@@ -33,6 +34,14 @@ class TaggedHeartbeatTask extends Task {
 	public function onRun(int $currentTick) {
 		
 		foreach($this->plugin->taggedPlayers as $name => $time) {
+			$sender = $this->plugin->getPlayer(strtolower($player->getName()));
+			$api = Scoreboards::getInstance();
+			$api->new($player, "COMBAT", TextFormat::RED . TextFormat::BOLD . "COMBAT LOGGER");
+			$api->setLine($player, 1, TextFormat::GOLD . "");
+			$api->setLine($player, 2, TextFormat::GRAY . "§eYou are in combat");
+			$api->setLine($player, 3, TextFormat::GRAY . "§aTime remaining:" . " " . $time);
+			$api->setLine($player, 4, TextFormat::BLUE . "");
+			$api->getObjectiveName($player);			
 			$time--;
 			if($time <= 0) {
 				$this->plugin->setTagged($name, false);
